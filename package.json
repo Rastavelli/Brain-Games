@@ -1,0 +1,19 @@
+{
+  "name": "brain-games",
+  "version": "0.1.0",
+  "description": "mini brain game via CLI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rastavelli/project-lvl1-s184.git"
+  },
+  "author": "Rashid Zhauzhurek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rastavelli/project-lvl1-s184/issues"
+  },
+  "homepage": "https://github.com/Rastavelli/project-lvl1-s184#readme"
+}
