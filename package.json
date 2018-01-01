@@ -24,5 +24,8 @@
     "babel-core": "*",
     "babel-preset-env": "*",
     "babel-preset-stage-0": "*"
-  }
+  },
+  "bin": {
+    "brain-games": "dist/bin/brain-games.js"
+  }  
 }
