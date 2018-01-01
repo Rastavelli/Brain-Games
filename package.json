@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/Rastavelli/project-lvl1-s184/issues"
   },
-  "homepage": "https://github.com/Rastavelli/project-lvl1-s184#readme"
+  "homepage": "https://github.com/Rastavelli/project-lvl1-s184#readme",
+  "devDependencies": {
+    "babel-cli": "*",
+    "babel-core": "*",
+    "babel-preset-env": "*",
+    "babel-preset-stage-0": "*"
+  }
 }
