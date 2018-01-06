@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-const gameFlow = (gameRules, questionGenerator, correctAnswer) => {
+const gameFlow = (gameRules, questionAndAnswerGenerator) => {
   console.log('Welcome to the Brain Games!');
 
   console.log(gameRules);
@@ -9,8 +9,7 @@ const gameFlow = (gameRules, questionGenerator, correctAnswer) => {
   console.log(`Hello, ${playerName}`);
 
   for (let i = 0; i < 3; i += 1) {
-    const question = questionGenerator();
-    const rightAnswer = correctAnswer(question);
+    const [question, rightAnswer] = questionAndAnswerGenerator();
 
     console.log(`Question: ${question}`);
     const playerAnswer = readlineSync.question('Your answer: ');

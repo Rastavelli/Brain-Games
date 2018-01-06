@@ -3,31 +3,27 @@ import randomNum from '../random';
 
 const rules = 'What is the result of the expression?';
 
-const generateQuestion = () => {
+const generateQuestionAndAnswer = () => {
   const num1 = randomNum(101);
   const num2 = randomNum(101);
   const operators = ['+', '-', '*'];
   const currentOperator = operators[randomNum(operators.length)];
   const question = `${num1} ${currentOperator} ${num2}`;
+  let correctAnswer = '';
 
-  return question;
-};
-
-const correctAnswer = (question) => {
-  const expression = question.split(' ');
-  const num1 = Number(expression[0]);
-  const operator = expression[1];
-  const num2 = Number(expression[2]);
-
-  switch (operator) {
-    case '*':
-      return (num1 * num2).toString();
+  switch (currentOperator) {
     case '-':
-      return (num1 - num2).toString();
+      correctAnswer = num1 - num2;
+      break;
+    case '*':
+      correctAnswer = num1 * num2;
+      break;
     default:
-      return (num1 + num2).toString();
+      correctAnswer = num1 + num2;
   }
+
+  return [question, String(correctAnswer)];
 };
 
-const calc = () => gameFlow(rules, generateQuestion, correctAnswer);
+const calc = () => gameFlow(rules, generateQuestionAndAnswer);
 export default calc;
