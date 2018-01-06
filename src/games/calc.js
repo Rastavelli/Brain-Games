@@ -1,12 +1,13 @@
-import gameFlow from ".."; // eslint-disable-line
+import gameFlow from '..'; // eslint-disable-line
+import randomNum from '../random';
 
 const rules = 'What is the result of the expression?';
 
 const generateQuestion = () => {
-  const num1 = Math.floor(Math.random() * 101);
-  const num2 = Math.floor(Math.random() * 101);
+  const num1 = randomNum(101);
+  const num2 = randomNum(101);
   const operators = ['+', '-', '*'];
-  const currentOperator = operators[[Math.floor(Math.random() * operators.length)]];
+  const currentOperator = operators[randomNum(operators.length)];
   const question = `${num1} ${currentOperator} ${num2}`;
 
   return question;
@@ -23,10 +24,8 @@ const correctAnswer = (question) => {
       return (num1 * num2).toString();
     case '-':
       return (num1 - num2).toString();
-    case '+':
-      return (num1 + num2).toString();
     default:
-      return 'There is no such operator :(';
+      return (num1 + num2).toString();
   }
 };
 
