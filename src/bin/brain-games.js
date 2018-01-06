@@ -1,4 +1,3 @@
 #!/usr/bin/env node
-import { printGreetings } from '..';
 
-printGreetings();
+console.log('Welcome to the Brain Games!');
