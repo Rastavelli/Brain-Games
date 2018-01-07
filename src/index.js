@@ -8,9 +8,13 @@ const gameFlow = (gameRules, questionAndAnswerGenerator) => {
   const playerName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${playerName}`);
 
-  for (let i = 0; i < 3; i += 1) {
-    const [question, rightAnswer] = questionAndAnswerGenerator();
+  const askQuestion = (count) => {
+    if (!count) {
+      console.log(`Congratulations, ${playerName}!`);
+      return true;
+    }
 
+    const [question, rightAnswer] = questionAndAnswerGenerator();
     console.log(`Question: ${question}`);
     const playerAnswer = readlineSync.question('Your answer: ');
 
@@ -19,10 +23,12 @@ const gameFlow = (gameRules, questionAndAnswerGenerator) => {
     } else {
       console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.
 Let's try again, ${playerName}!`);
-      return;
+      return false;
     }
-  }
-  console.log(`Congratulations, ${playerName}!`);
+    return askQuestion(count - 1);
+  };
+
+  askQuestion(3);
 };
 
 export default gameFlow;
