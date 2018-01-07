@@ -1,6 +1,6 @@
 {
   "name": "brain-games-2018",
-  "version": "0.5.0",
+  "version": "0.6.1",
   "description": "mini brain game via CLI",
   "main": "index.js",
   "scripts": {
