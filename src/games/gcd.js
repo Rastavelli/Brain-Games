@@ -8,14 +8,14 @@ const generateQuestionAndAnswer = () => {
   const num2 = randomNum(1, 101);
   const question = `${num1} ${num2}`;
 
-  const iter = (a, b) => {
+  const findGcd = (a, b) => {
     if (b === 0) {
       return a;
     }
-    return iter(b, a % b);
+    return findGcd(b, a % b);
   };
 
-  const correctAnswer = iter(num1, num2);
+  const correctAnswer = findGcd(num1, num2);
 
   return [question, String(correctAnswer)];
 };
